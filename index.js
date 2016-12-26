@@ -25,12 +25,12 @@ var api = new ParseServer({
     {
       pfx: 'pollar_push_development', // Dev PFX or P12
       bundleId: 'com.Pollar',
-      production: true // Dev
+      production: false // Dev
     },
     {
       pfx: 'pollar_push_production', // Prod PFX or P12
       bundleId: 'com.Pollar',
-      production: false // Prod
+      production: true // Prod
     }
   ]
 }
