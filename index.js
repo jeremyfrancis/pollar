@@ -22,7 +22,10 @@ var api = new ParseServer({
   },
   push: {
   ios: [
-    {
+    pfx: 'pollar_universal_push',
+    bundleId: 'com.Pollar',
+    production: true
+    /*{
       pfx: 'pollar_push_development', // Dev PFX or P12
       bundleId: 'com.Pollar',
       production: false // Dev
@@ -31,7 +34,7 @@ var api = new ParseServer({
       pfx: 'pollar_push_production', // Prod PFX or P12
       bundleId: 'com.Pollar',
       production: true // Prod
-    }
+    }*/
   ]
 }
 });
