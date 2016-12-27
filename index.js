@@ -21,7 +21,7 @@ var api = new ParseServer({
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
   push: {
-  ios: [
+  ios: {
     pfx: 'pollar_universal_push',
     bundleId: 'com.Pollar',
     production: true
@@ -35,7 +35,7 @@ var api = new ParseServer({
       bundleId: 'com.Pollar',
       production: true // Prod
     }*/
-  ]
+  }
 }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
