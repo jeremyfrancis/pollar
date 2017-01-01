@@ -18,24 +18,9 @@ var api = new ParseServer({
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   liveQuery: {
-    classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  });
-  push: {
-  ios: {
-    /*pfx: 'pollar_universal_push',
-    bundleId: 'com.Pollar',
-    production: true*/
-    {
-      pfx: 'pollar_push_development', // Dev PFX or P12
-      bundleId: 'com.Pollar',
-      production: false // Dev
-    },
-    {
-      pfx: 'pollar_push_production', // Prod PFX or P12
-      bundleId: 'com.Pollar',
-      production: true // Prod
-    }
+    classNames: ["Posts", "Comments"]; // List of classes to support for query subscriptions
   }
+  });
 }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
