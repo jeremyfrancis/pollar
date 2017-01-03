@@ -23,11 +23,11 @@ var api = new ParseServer({
   push: {
     ios: [
       {
-        pfx: 'pollar_push_development',
+        pfx: 'pollar_push_development.p12',
         bundleId: 'com.Pollar',
         production: false
       },{
-        pfx: 'pollar_push_development',
+        pfx: 'pollar_push_development.p12',
         bundleId: 'com.Pollar',
         production: true
       }
