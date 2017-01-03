@@ -27,7 +27,7 @@ var api = new ParseServer({
         bundleId: 'com.Pollar',
         production: false
       },{
-        pfx: __dirname + '/new_pollar_push_development.p12',
+        pfx: __dirname + '/pollar_push_production.p12',
         bundleId: 'com.Pollar',
         production: true
       }
