@@ -4,6 +4,7 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
+var FSFilesAdapter = require('parse-server-fs-adapter');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -11,8 +12,7 @@ if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
-var FSFilesAdapter = require('parse-server-files-adapter');
-var fsAdapter = new FSFilesAdapter();
+var fsAdapter = new FSFilesAdapter({});
 
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
