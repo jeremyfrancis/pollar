@@ -20,8 +20,8 @@ var api = new ParseServer({
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   fileKey:'066c8b87-1419-4678-aeb1-0605657cecdb',
   filesAdapter: new S3Adapter(
-    "AKIAII7EJFJLVEX5NPWQ",
-    "k5w5DjfWggajQZ4uebJpm7eFdvAF4var7dC+dr1S",
+    "AKIAIYGSRBIDDPI2TNCA",
+    "2S6QQAhSV4nqP+yZdJWwAJs909h6n0BcT49Fr3S+",
     "pollar-assets",
     {directAccess:true}
   ),
