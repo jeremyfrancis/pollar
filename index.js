@@ -4,7 +4,7 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
-var FSFilesAdapter = require('parse-server-fs-adapter');
+var S3Adapter = require('parse-server').S3Adapter;
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -12,7 +12,6 @@ if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
-var fsAdapter = new FSFilesAdapter({});
 
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
@@ -20,7 +19,12 @@ var api = new ParseServer({
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   fileKey:'066c8b87-1419-4678-aeb1-0605657cecdb',
-  filesAdapter: fsAdapter,
+  filesAdapter: new S3Adapter(
+    "AKIAII7EJFJLVEX5NPWQ",
+    "k5w5DjfWggajQZ4uebJpm7eFdvAF4var7dC+dr1S",
+    "pollar-assets",
+    {directAccess:true}
+  ),
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
